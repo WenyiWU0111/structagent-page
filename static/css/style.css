@@ -375,7 +375,7 @@ footer a { color: #d8c9f7; }
 .hero { background: #fff; color: var(--ink); padding: 50px 0 34px; text-align: center; border-bottom: 1px solid var(--line); }
 .hero::before { display: none; }
 .venue { color: var(--fuchsia); font-weight: 700; letter-spacing: .13em; text-transform: uppercase; font-size: .73rem; margin: 0 0 14px; }
-.paper-title { font-family: var(--serif); font-weight: 600; font-size: clamp(1.7rem, 3.5vw, 2.6rem); line-height: 1.17; letter-spacing: -.005em; color: var(--ink); margin: 0 auto 14px; max-width: 900px; }
+.hero .paper-title { font-family: var(--serif); font-weight: 600; font-size: clamp(1.9rem, 3.6vw, 2.9rem); line-height: 1.17; letter-spacing: -.005em; color: var(--ink); margin: 0 auto 14px; max-width: 900px; text-align: center; text-wrap: balance; }
 .hero-punch { color: var(--violet-deep); font-style: italic; font-weight: 500; font-size: clamp(1rem,1.7vw,1.18rem); margin: 0 0 22px; }
 .author-row { font-size: 1.06rem; color: var(--ink); font-weight: 500; max-width: 800px; margin: 0 auto 5px; line-height: 1.85; }
 .author-row sup { color: var(--muted); font-weight: 600; }

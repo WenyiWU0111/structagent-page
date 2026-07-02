@@ -37,7 +37,7 @@
 <header class="hero">
   <div class="container">
     <p class="venue">Preprint · 2026</p>
-    <h1 class="paper-title">StructAgent: Building Digital Agents with<br>Unified Causal Structure</h1>
+    <h1 class="paper-title">StructAgent: Building Digital Agents with Unified Causal Structure</h1>
     <p class="hero-punch">Progress you can verify — not just claim.</p>
 
     <div class="author-row">
@@ -63,16 +63,20 @@
 <!-- ── Abstract / TL;DR ────────────────────────────── -->
 <section id="about">
   <div class="container">
-    <div class="eyebrow">Overview</div>
-    <h2 class="sec-title">State as evidence, not narration</h2>
+    <div class="eyebrow">Abstract</div>
+    <h2 class="sec-title">A verifier-centered agent over a unified causal State</h2>
     <p class="lead">
-      Long-horizon computer use is brittle because agents lose track of <em>which task
-      requirements currently hold</em>. Screenshots show the interface and long histories show
-      what happened — neither shows the causal status of the task. StructAgent makes a unified,
-      evidence-backed <b>task State</b> the shared interface between a planner (chooses the next
-      subgoal), an actor (executes a short burst of GUI / shell / app actions), and a verifier
-      (checks deterministic probes or visual evidence and emits the <b>only</b> events that
-      advance State). A DONE auditor gates completion; failure attribution routes recovery.
+      Long-horizon computer-use agents remain brittle because they must not only act over many
+      steps but also keep a reliable account of <em>what is currently true</em> — earlier progress
+      can be overwritten, invalidated, or falsely claimed complete. <b>StructAgent</b> is a
+      verifier-centered planner–actor framework built around a unified, causal <b>task State</b>
+      that records satisfied requirements, captured facts, and their supporting evidence. The
+      planner selects subgoals and the actor executes them, but only <b>verifier-backed events</b>
+      can advance or invalidate the State — so verification commits progress <em>during</em>
+      execution, not just as a terminal judge. Structured memory and typed tool surfaces supply
+      State-conditioned advice and reliable execution paths, and failure attribution routes
+      recovery without bypassing evidence-backed updates — giving the planner a compact, auditable
+      view of progress instead of raw histories or unsupported DONE claims.
     </p>
   </div>
 </section>
