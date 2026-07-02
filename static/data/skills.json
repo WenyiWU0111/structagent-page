@@ -1,0 +1,464 @@
+{
+ "total_mined": 429,
+ "domains": [
+  {
+   "key": "chrome",
+   "label": "Chrome"
+  },
+  {
+   "key": "libreoffice_calc",
+   "label": "Calc"
+  },
+  {
+   "key": "libreoffice_impress",
+   "label": "Impress"
+  },
+  {
+   "key": "libreoffice_writer",
+   "label": "Writer"
+  },
+  {
+   "key": "gimp",
+   "label": "GIMP"
+  },
+  {
+   "key": "vlc",
+   "label": "VLC"
+  },
+  {
+   "key": "thunderbird",
+   "label": "Thunderbird"
+  },
+  {
+   "key": "os",
+   "label": "OS / Terminal"
+  },
+  {
+   "key": "multi_apps",
+   "label": "Multi-app"
+  }
+ ],
+ "skills": [
+  {
+   "id": "install_chrome_extensions_by_category_rating",
+   "title": "Install chrome extensions by category rating",
+   "domain": "chrome",
+   "domainLabel": "Chrome",
+   "when": "When the user wants to find and install one or more Chrome extensions from a particular category (Shopping, Entertainment, Games, Travel, Tools, etc.) based on rating criteria, typically requesting the…",
+   "steps": [
+    "Navigate to the Chrome Web Store",
+    "Filter extensions by the target category",
+    "Sort extensions by rating",
+    "Select and install the target extension(s)",
+    "Repeat installation for additional extensions if needed",
+    "Optionally bookmark extension pages"
+   ],
+   "n_tasks": 10,
+   "pitfall": "Clicking the wrong category tile in the sidebar"
+  },
+  {
+   "id": "customize_chrome_profile",
+   "title": "Customize chrome profile",
+   "domain": "chrome",
+   "domainLabel": "Chrome",
+   "when": "When the user wants to personalize their Chrome browser profile by changing username, theme color, and/or avatar icon.",
+   "steps": [
+    "Navigate to profile customization settings",
+    "Change profile username to desired name",
+    "Select theme color from color picker",
+    "Select avatar icon from avatar grid"
+   ],
+   "n_tasks": 10,
+   "pitfall": "Avatar selection requires precise click coordinates; missing the target may navigate to unrelated settings"
+  },
+  {
+   "id": "clear_chrome_browsing_data",
+   "title": "Clear chrome browsing data",
+   "domain": "chrome",
+   "domainLabel": "Chrome",
+   "when": "When the user wants to delete browsing history, cookies, cache, passwords, autofill data, or other site data from Chrome for privacy, cleanup, or troubleshooting purposes. Use for both comprehensive 'all time'…",
+   "steps": [
+    "Open Chrome's main menu",
+    "Navigate to the Delete browsing data dialog",
+    "Switch to Advanced tab if comprehensive data deletion is needed",
+    "Set the time range for data deletion",
+    "Select data types for deletion",
+    "Execute the data deletion",
+    "Verify deletion success (optional)"
+   ],
+   "n_tasks": 9,
+   "pitfall": "Always verify and set the time range explicitly — the default may be 'Last hour' which would miss older data when 'All time' is intended"
+  },
+  {
+   "id": "calc_apply_custom_number_format",
+   "title": "Calc apply custom number format",
+   "domain": "libreoffice_calc",
+   "domainLabel": "Calc",
+   "when": "When you need to format numeric cells with specific display patterns: custom suffixes/prefixes, decimal places, thousand separators, scientific notation, locale-specific separators, or scaling…",
+   "steps": [
+    "Identify the target range and required format pattern",
+    "Apply the format using the most reliable method",
+    "Verify the format matches the requirement exactly"
+   ],
+   "n_tasks": 10,
+   "pitfall": "Using '0' instead of '#,##0' when thousand separators are required"
+  },
+  {
+   "id": "freeze_panes_calc",
+   "title": "Freeze panes calc",
+   "domain": "libreoffice_calc",
+   "domainLabel": "Calc",
+   "when": "When the user needs to keep header rows and/or leading columns visible while scrolling through a spreadsheet in LibreOffice Calc. Applies to freezing the first N rows, first M columns, or both simultaneously.",
+   "steps": [
+    "Ensure the target sheet is active and document is fully loaded",
+    "Apply freeze panes with the correct row and column counts",
+    "Verify freeze was applied correctly"
+   ],
+   "n_tasks": 9,
+   "pitfall": "LibreOffice may show a Document Recovery dialog on startup; always handle it before attempting UNO/macro operations"
+  },
+  {
+   "id": "create_3d_chart_libreoffice_calc",
+   "title": "Create 3d chart libreoffice calc",
+   "domain": "libreoffice_calc",
+   "domainLabel": "Calc",
+   "when": "When the task requires creating a 3D chart (bar, cone, or column) from spreadsheet data in LibreOffice Calc, and optionally customizing chart elements like data series colors, gridlines, legends, data labels,…",
+   "steps": [
+    "Select the data range for the chart",
+    "Launch the chart creation wizard",
+    "Configure the chart type as 3D",
+    "Configure data range and label settings",
+    "Configure chart elements (titles, axes, gridlines)",
+    "Format specific data series (color, transparency, texture)",
+    "Add and configure data labels",
+    "Reposition or format the chart legend",
+    "Finalize and exit chart editing mode"
+   ],
+   "n_tasks": 6,
+   "pitfall": "The Finish button in Chart Elements dialog may require multiple clicks to register"
+  },
+  {
+   "id": "format_slide_titles_multi_slide",
+   "title": "Format slide titles multi slide",
+   "domain": "libreoffice_impress",
+   "domainLabel": "Impress",
+   "when": "When the user requests formatting changes (font size, color, bold, highlighting, effects, spacing, etc.) to be applied to title text on multiple specific slides in a presentation.",
+   "steps": [
+    "Navigate to the first target slide",
+    "Select the title text on the current slide",
+    "Apply the requested formatting changes to the selected title",
+    "Navigate to the next target slide and repeat formatting",
+    "Save the presentation to persist changes"
+   ],
+   "n_tasks": 8,
+   "pitfall": "Single clicks on title text may fail to select it; dragging from end to beginning or triple-clicking is more reliable"
+  },
+  {
+   "id": "impress_format_title_text",
+   "title": "Impress format title text",
+   "domain": "libreoffice_impress",
+   "domainLabel": "Impress",
+   "when": "When the user needs to change font size, color, bold, underline, or alignment of a slide title in LibreOffice Impress. Applies to single or multiple slides.",
+   "steps": [
+    "Identify target slide(s) and title placeholder or shape name",
+    "Apply font properties (bold, size, underline) to title",
+    "Apply text color to title",
+    "Apply paragraph alignment to title",
+    "Apply formatting to all text on a slide (if scope is slide-wide)"
+   ],
+   "n_tasks": 8,
+   "pitfall": "Use separate UNO API calls for each property (color via impress_set_text_color, font properties via impress_set_font, alignment via…"
+  },
+  {
+   "id": "impress_format_text_elements",
+   "title": "Impress format text elements",
+   "domain": "libreoffice_impress",
+   "domainLabel": "Impress",
+   "when": "When the user needs to change visual properties of text elements such as font size, font family, color, bold/italic styling, borders, or alignment within a presentation.",
+   "steps": [
+    "Open the target presentation and navigate to the relevant slide",
+    "Select the text element to format",
+    "Apply font family and size changes",
+    "Apply text styling (bold, italic, color)",
+    "Apply alignment formatting",
+    "Apply border or fill formatting to text box",
+    "Save the presentation"
+   ],
+   "n_tasks": 7,
+   "pitfall": "Ensure the correct text element is selected before changing properties to avoid modifying the wrong element"
+  },
+  {
+   "id": "writer_paragraph_spacing_formatting",
+   "title": "Writer paragraph spacing formatting",
+   "domain": "libreoffice_writer",
+   "domainLabel": "Writer",
+   "when": "When the user needs to set line spacing (single, 1.5, double, or custom) and/or paragraph indentation (left, right, first-line) on specific paragraphs or the entire document in LibreOffice Writer.",
+   "steps": [
+    "Identify target paragraphs by index or selection scope",
+    "Apply line spacing to target paragraphs",
+    "Apply font size to target paragraphs (if required)",
+    "Apply indentation settings (if required)",
+    "Insert paragraph breaks to separate sentences (if required)",
+    "Save the document to persist changes"
+   ],
+   "n_tasks": 10,
+   "pitfall": "For double line spacing via UNO, set ParaLineSpacing.Height=200 (not 200% — the value 200 means 200% proportional spacing) and Mode=PROPORTIONAL"
+  },
+  {
+   "id": "format_writer_document_text",
+   "title": "Format writer document text",
+   "domain": "libreoffice_writer",
+   "domainLabel": "Writer",
+   "when": "When the task requires opening a Writer document and applying text formatting such as font changes, styling (bold/italic/underline), alignment, line spacing, text case conversion, or color changes to specific…",
+   "steps": [
+    "Open the target document in LibreOffice Writer",
+    "Navigate to and select the target text range",
+    "Apply font and text styling changes",
+    "Apply paragraph-level formatting",
+    "Clear existing formatting if needed",
+    "Save the document to preserve changes"
+   ],
+   "n_tasks": 8,
+   "pitfall": "Clicking font size dropdown instead of font family dropdown when changing fonts"
+  },
+  {
+   "id": "format_writer_document_text_and_lists",
+   "title": "Format writer document text and lists",
+   "domain": "libreoffice_writer",
+   "domainLabel": "Writer",
+   "when": "When the task requires opening a LibreOffice Writer document and applying multiple formatting operations including text styling (color, font effects, alignment), list type conversion (numbered ↔ bulleted,…",
+   "steps": [
+    "Open the target document from the specified folder",
+    "Select the target text or list for formatting",
+    "Apply text case and font style formatting",
+    "Apply text alignment formatting",
+    "Apply special character formatting (superscript, strikethrough, underline styles)",
+    "Convert list type and apply custom bullet/numbering style",
+    "Apply highlighting and advanced text decoration",
+    "Apply paragraph-level formatting (line spacing, font size)",
+    "Save the modified document"
+   ],
+   "n_tasks": 7,
+   "pitfall": "Clicking near the Bold button may accidentally open line styles dropdown instead of applying bold"
+  },
+  {
+   "id": "gimp_color_adjustment_with_blending",
+   "title": "Gimp color adjustment with blending",
+   "domain": "gimp",
+   "domainLabel": "GIMP",
+   "when": "When the user wants to open an image in GIMP and apply a color or tonal adjustment (brightness/contrast, curves, threshold, posterize, color to alpha) with specific blending mode and opacity settings.",
+   "steps": [
+    "Launch GIMP application",
+    "Open the target image file",
+    "Access the appropriate color adjustment tool",
+    "Configure the adjustment parameters",
+    "Configure blending mode to Normal",
+    "Set the opacity to the desired percentage",
+    "Apply the changes",
+    "Change foreground color if requested"
+   ],
+   "n_tasks": 6,
+   "pitfall": "Forgetting to change blending mode from default (often 'Replace') to 'Normal'"
+  },
+  {
+   "id": "vlc_video_screenshot_gimp_edit",
+   "title": "Vlc video screenshot gimp edit",
+   "domain": "gimp",
+   "domainLabel": "GIMP",
+   "when": "When you need to capture a frame from a video in VLC media player and then apply image processing effects in GIMP (blur, noise, desaturation, text overlay, etc.)",
+   "steps": [
+    "Locate and open the target video file in VLC",
+    "Play video and pause at the desired frame",
+    "Capture screenshot using VLC's snapshot feature",
+    "Open the captured screenshot in GIMP",
+    "Apply the required image processing effects",
+    "Save or export the processed image"
+   ],
+   "n_tasks": 3,
+   "pitfall": "Clicking File menu in GIMP may fail to open dropdown; keyboard shortcuts (Ctrl+O, Ctrl+Shift+E) are more reliable"
+  },
+  {
+   "id": "gimp_adjust_color_properties",
+   "title": "Gimp adjust color properties",
+   "domain": "gimp",
+   "domainLabel": "GIMP",
+   "when": "When the user requests to enhance, reduce, or adjust color vibrancy, saturation, brightness, or contrast of an image in GIMP. The image is already open in GIMP.",
+   "steps": [
+    "Open the Colors menu in GIMP",
+    "Open the appropriate adjustment dialog",
+    "Adjust the target property using the dialog controls",
+    "Apply the changes and close the dialog"
+   ],
+   "n_tasks": 3,
+   "pitfall": "Dragging sliders in GIMP dialogs is imprecise for exact values"
+  },
+  {
+   "id": "filter_media_by_genre_and_sort",
+   "title": "Filter media by genre and sort",
+   "domain": "vlc",
+   "domainLabel": "VLC",
+   "when": "When the user wants to browse movies or TV shows filtered by a specific genre (especially comedy) and sorted by user ratings or audience scores on a streaming/media review site.",
+   "steps": [
+    "Navigate to the target media section (Movies or TV Shows)",
+    "Reveal or access filtering options",
+    "Apply platform/streaming service filter (if needed)",
+    "Select the target genre to filter results",
+    "Confirm genre selection (if required)",
+    "Sort the filtered list by rating or score"
+   ],
+   "n_tasks": 4,
+   "pitfall": "Genre selection may require explicit confirmation via APPLY button"
+  },
+  {
+   "id": "lookup_order_status_by_number_and_email",
+   "title": "Lookup order status by number and email",
+   "domain": "thunderbird",
+   "domainLabel": "Thunderbird",
+   "when": "When the user needs to check the status or details of an existing order by providing an order number and the email address used during purchase. Applicable across e-commerce sites that offer guest order…",
+   "steps": [
+    "Navigate to the order lookup or order status page",
+    "Enter the order number into the designated input field",
+    "Enter the associated email address for verification",
+    "Submit the form to retrieve order details"
+   ],
+   "n_tasks": 3,
+   "pitfall": "Entering order number or email with typos or extra spaces"
+  },
+  {
+   "id": "thunderbird_message_filter_forward",
+   "title": "Thunderbird message filter forward",
+   "domain": "thunderbird",
+   "domainLabel": "Thunderbird",
+   "when": "When the user needs to set up automatic forwarding of incoming emails from one account to another address using Thunderbird's local message filters.",
+   "steps": [
+    "Open the Message Filters dialog",
+    "Create new filter",
+    "Configure filter to match all messages",
+    "Set forward action",
+    "Enter forwarding address and save"
+   ],
+   "n_tasks": 1,
+   "pitfall": "Do not write Thunderbird config files (msgFilterRules.dat) via CLI while Thunderbird is running — use the GUI"
+  },
+  {
+   "id": "thunderbird_remove_account",
+   "title": "Thunderbird remove account",
+   "domain": "thunderbird",
+   "domainLabel": "Thunderbird",
+   "when": "When the user needs to delete an email account from Thunderbird, removing all local data and configuration for that account.",
+   "steps": [
+    "Launch Thunderbird Mail application",
+    "Open Account Settings",
+    "Access Account Actions menu",
+    "Select remove account option",
+    "Confirm account removal"
+   ],
+   "n_tasks": 1,
+   "pitfall": "After launching Thunderbird, wait for the UI to fully load before attempting to click Account Settings"
+  },
+  {
+   "id": "search_hotels_by_price",
+   "title": "Search hotels by price",
+   "domain": "os",
+   "domainLabel": "OS / Terminal",
+   "when": "When the user needs to find hotel accommodations in a specific city for given dates and guest count, prioritizing the lowest available price. Applies to travel booking sites where the workflow involves…",
+   "steps": [
+    "Navigate to hotel search interface",
+    "Enter destination city",
+    "Set check-in and check-out dates",
+    "Configure guest count",
+    "Execute the hotel search",
+    "Sort results by lowest price",
+    "Apply additional filters if specified",
+    "Select the target hotel"
+   ],
+   "n_tasks": 8,
+   "pitfall": "Default sorting is 'Recommended' or 'Featured', not 'Lowest Price'"
+  },
+  {
+   "id": "customize_vscode_themes",
+   "title": "Customize vscode themes",
+   "domain": "os",
+   "domainLabel": "OS / Terminal",
+   "when": "When the user wants to change the visual appearance of VS Code by selecting different color themes, file icon themes, or product icon themes. This includes switching between multiple themes in sequence or…",
+   "steps": [
+    "Open the settings menu to access theme options",
+    "Navigate to the Themes submenu",
+    "Select and apply the desired color theme",
+    "Select and apply the desired file icon theme (if required)",
+    "Select and apply the desired product icon theme (if required)",
+    "Apply multiple theme changes in sequence (if required)"
+   ],
+   "n_tasks": 7,
+   "pitfall": "Confusing the settings gear icon with the account icon or remote connections icon in the bottom left corner"
+  },
+  {
+   "id": "retrieve_airline_booking_by_reference_and_name",
+   "title": "Retrieve airline booking by reference and name",
+   "domain": "os",
+   "domainLabel": "OS / Terminal",
+   "when": "When the user needs to look up, view, modify, or check the status of an existing airline reservation or trip using a booking reference/confirmation number and passenger last name.",
+   "steps": [
+    "Navigate to the booking lookup section",
+    "Enter the booking reference or ticket number",
+    "Enter the passenger's last name",
+    "Submit the search to retrieve booking details"
+   ],
+   "n_tasks": 7,
+   "pitfall": "The last name input field may be hidden within a dropdown container and requires clicking to expand before typing"
+  },
+  {
+   "id": "research_stock_data_multiple_companies",
+   "title": "Research stock data multiple companies",
+   "domain": "multi_apps",
+   "domainLabel": "Multi-app",
+   "when": "When the user requests current stock prices, financial metrics (P/E ratio, market cap), or historical price charts for multiple publicly traded companies. Typically involves multiple companies and requires…",
+   "steps": [
+    "Launch web browser to access Google Search",
+    "For each target company: search for stock data and view requested chart timeframe",
+    "Repeat search and chart viewing for all remaining companies",
+    "Verify all requested companies and data points are collected"
+   ],
+   "n_tasks": 7,
+   "pitfall": "Clicking navigation tabs (Images, Videos) or upper navigation elements (Search Labs) instead of search bar or chart controls"
+  },
+  {
+   "id": "search_adoptable_pets_with_filters",
+   "title": "Search adoptable pets with filters",
+   "domain": "multi_apps",
+   "domainLabel": "Multi-app",
+   "when": "When the user needs to find adoptable pets (typically dogs) matching specific criteria like location, breed, age, gender, color, or care source. Use this for any pet adoption search that requires applying…",
+   "steps": [
+    "Navigate to the pet search interface",
+    "Set the search location using the target zip code",
+    "Apply breed filter if a specific breed is required",
+    "Apply age/life stage filter",
+    "Execute the initial search to load results and access additional filters",
+    "Dismiss any obstructing overlays or pop-ups",
+    "Apply additional filters on the results page",
+    "Review results and select a matching pet profile"
+   ],
+   "n_tasks": 6,
+   "pitfall": "Pop-up overlays can obstruct the results page and filter controls"
+  },
+  {
+   "id": "search_and_filter_hotel_bookings",
+   "title": "Search and filter hotel bookings",
+   "domain": "multi_apps",
+   "domainLabel": "Multi-app",
+   "when": "When the user needs to find hotel accommodations matching specific criteria including destination, dates, guest configuration, star rating, amenities, location preferences, and price constraints. Applicable…",
+   "steps": [
+    "Navigate to the hotel booking interface",
+    "Set destination and dates",
+    "Configure guest and room requirements",
+    "Apply star rating and brand filters",
+    "Apply amenity and feature filters",
+    "Apply location-based filters",
+    "Sort results to find optimal option",
+    "Select and initiate booking"
+   ],
+   "n_tasks": 4,
+   "pitfall": "Default guest count is typically 1-2 adults; must explicitly update to match requirements"
+  }
+ ]
+}

@@ -1,0 +1,9 @@
+_cap_deck.py
+.DS_Store
+_montage/
+_scratch/
+_scratch_*
+_scratch_frames/
+_scratch_*.png
+_shot*.py
+_shot.py

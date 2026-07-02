@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>StructAgent: Building Digital Agents with Unified Causal Structure</title>
+<meta name="description" content="StructAgent commits progress only when a verifier attaches evidence to a task-state update — not when the model says it's done. New open-model SOTA on OSWorld, with generalization to Mind2Web and Minecraft.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&family=Source+Serif+4:opsz,wght@8..60,500;8..60,600;8..60,700&display=swap">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 rx=%277%27 fill=%27%237C3AED%27/%3E%3Ctext x=%2716%27 y=%2723%27 font-size=%2721%27 font-family=%27sans-serif%27 font-weight=%27800%27 fill=%27white%27 text-anchor=%27middle%27%3ES%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="static/css/style.css">
+</head>
+<body>
+
+<!-- ── Nav ─────────────────────────────────────────── -->
+<nav class="nav">
+  <div class="nav-inner">
+    <div class="nav-logo">Aether<span>&nbsp;AI</span></div>
+    <button class="nav-toggle" aria-label="menu">☰</button>
+    <div class="nav-links" id="navlinks">
+      <a href="#method">Method</a>
+      <a href="#results">Results</a>
+      <a href="#demos">Demos</a>
+      <a href="#skills">Skill Library</a>
+      <a href="#minecraft">Minecraft</a>
+      <a href="#trajectories">Trajectories</a>
+      <a href="#walkthrough">Video</a>
+      <a href="#cite">Cite</a>
+      <a class="ext" href="https://arxiv.org/abs/XXXX.XXXXX" target="_blank" rel="noopener">Paper</a>
+      <a class="ext" href="https://github.com/WenyiWU0111/StructAgent" target="_blank" rel="noopener">Code</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ── Hero ────────────────────────────────────────── -->
+<header class="hero">
+  <div class="container">
+    <p class="venue">Preprint · 2026</p>
+    <h1 class="paper-title">StructAgent: Building Digital Agents with<br>Unified Causal Structure</h1>
+    <p class="hero-punch">Progress you can verify — not just claim.</p>
+
+    <div class="author-row">
+      <span>Wenyi Wu</span><sup>1,2</sup>, <span>Sibo Zhu</span><sup>1,2</sup>, <span>Kun Zhou</span><sup>2</sup>,
+      <span>Aayush Salvi</span><sup>1</sup>, <span>Zixuan Song</span><sup>1</sup>, <span>Biwei Huang</span><sup>1,2</sup>
+    </div>
+    <div class="affil-row"><sup>1</sup> UC San Diego &nbsp;&nbsp; <sup>2</sup> Aether AI Lab</div>
+
+    <div class="cta cta-center">
+      <a class="btn btn-solid" href="https://arxiv.org/abs/XXXX.XXXXX" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v4a1 1 0 0 0 1 1h4"/><path d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2z"/></svg>Paper</a>
+      <a class="btn btn-ghost" href="https://github.com/WenyiWU0111/StructAgent" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>Code</a>
+      <a class="btn btn-ghost" href="https://huggingface.co/datasets/WenyiWU0111/structagent-page-assets" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v14c0 1.7 4 3 9 3s9-1.3 9-3V5"/><path d="M3 12c0 1.7 4 3 9 3s9-1.3 9-3"/></svg>Data</a>
+      <a class="btn btn-ghost" href="#trajectories">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>Trajectories</a>
+    </div>
+
+  </div>
+</header>
+
+<!-- ── Abstract / TL;DR ────────────────────────────── -->
+<section id="about">
+  <div class="container">
+    <div class="eyebrow">Overview</div>
+    <h2 class="sec-title">State as evidence, not narration</h2>
+    <p class="lead">
+      Long-horizon computer use is brittle because agents lose track of <em>which task
+      requirements currently hold</em>. Screenshots show the interface and long histories show
+      what happened — neither shows the causal status of the task. StructAgent makes a unified,
+      evidence-backed <b>task State</b> the shared interface between a planner (chooses the next
+      subgoal), an actor (executes a short burst of GUI / shell / app actions), and a verifier
+      (checks deterministic probes or visual evidence and emits the <b>only</b> events that
+      advance State). A DONE auditor gates completion; failure attribution routes recovery.
+    </p>
+  </div>
+</section>
+
+<!-- ── Method ──────────────────────────────────────── -->
+<section id="method" class="alt">
+  <div class="container">
+    <div class="eyebrow">Method</div>
+    <h2 class="sec-title">Planner · Actor · Verifier over a shared State</h2>
+    <p class="lead">The verifier is the only writer of progress. Everything else reads and proposes.</p>
+    <figure class="figure reveal">
+      <img src="static/images/architecture.png" alt="StructAgent architecture">
+      <figcaption>StructAgent lifecycle: subgoal → actor burst → evidence-based verification → State update / routed recovery.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ── Results ─────────────────────────────────────── -->
+<section id="results">
+  <div class="container">
+    <div class="eyebrow">Results</div>
+    <h2 class="sec-title">Large gains on open backbones — and it tops frontier systems</h2>
+    <p class="lead">
+      On OSWorld-Verified, StructAgent raises open Qwen3.5 backbones by <b>+74%</b> (9B) and
+      <b>+97%</b> (27B) in relative success over the single-model agent, beating every open-source
+      agent framework at matched settings. With the MiniMax-M3 backbone it reaches <b>78.9%</b> —
+      the best overall, above frontier single models and their agent frameworks.
+    </p>
+    <figure class="figure reveal">
+      <img src="static/images/results_osworld.png" alt="OSWorld-Verified results">
+      <figcaption>OSWorld-Verified success rate. Left: open backbones (self-run) vs. agent frameworks. Right: frontier backbones (reported).</figcaption>
+    </figure>
+    <figure class="figure reveal" style="margin-top:40px">
+      <img src="static/images/results_minecraft.png" alt="Minecraft results by tier">
+      <figcaption>Minecraft generalization: success rate across five crafting tiers vs. Optimus-1.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ── Demos ───────────────────────────────────────── -->
+<section id="demos" class="alt">
+  <div class="container">
+    <div class="eyebrow">Demos</div>
+    <h2 class="sec-title reveal">Where the baseline hallucinates, the verifier holds the line</h2>
+    <p class="lead reveal">Three OSWorld cases, side by side: a single-model baseline (no verifier) versus StructAgent's
+      planner–actor–verifier. Step through each to see the ledger seal outcomes with evidence — and the
+      baseline fabricate its way to a wrong answer.</p>
+
+    <div class="tabs reveal" id="demo-tabs"></div>
+    <p class="case-blurb reveal" id="demo-blurb"></p>
+    <div class="carousel reveal">
+      <div class="carousel-frame">
+        <img id="demo-img" alt="case study slide">
+        <button class="carousel-nav carousel-prev" id="demo-prev" aria-label="previous">‹</button>
+        <button class="carousel-nav carousel-next" id="demo-next" aria-label="next">›</button>
+      </div>
+      <div class="carousel-bar">
+        <div class="dots" id="demo-dots"></div>
+        <div class="counter" id="demo-counter"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── Skill Library ──────────────────────────────── -->
+<section id="skills">
+  <div class="container">
+    <div class="eyebrow">Skill &amp; Memory Library</div>
+    <h2 class="sec-title reveal">What the agent learned</h2>
+    <p class="lead reveal">StructAgent mines reusable skills from its own solved trajectories. Each skill records
+      <em>when to use it</em>, a step-by-step plan template, and the pitfalls seen in practice — then feeds
+      the planner on new tasks.</p>
+    <p class="note-inline reveal" id="skill-note"></p>
+    <div class="chips reveal" id="skill-chips"></div>
+    <div class="grid" id="skill-grid"></div>
+  </div>
+</section>
+
+<!-- ── Minecraft ───────────────────────────────────── -->
+<section id="minecraft" class="alt">
+  <div class="container">
+    <div class="eyebrow">Generalization</div>
+    <h2 class="sec-title reveal">Beyond the desktop: open-world Minecraft</h2>
+    <p class="lead reveal">The same verifier-derived State and role separation transfer to Minecraft — milestones become
+      <code>(verb, item, n)</code> and the verifier reads <b>inventory-delta</b> probes instead of accessibility or
+      file probes. StructAgent plays through multi-step crafting the same way it drives a desktop.</p>
+    <div class="vgrid">
+      <figure class="vcard reveal d1"><video src="static/videos/mc_wooden_pickaxe.mp4" autoplay muted loop playsinline preload="metadata"></video><figcaption><span class="tier">Wooden</span>Craft a wooden pickaxe</figcaption></figure>
+      <figure class="vcard reveal d2"><video src="static/videos/mc_stone_shovel.mp4" autoplay muted loop playsinline preload="metadata"></video><figcaption><span class="tier">Stone</span>Craft a stone shovel</figcaption></figure>
+      <figure class="vcard reveal d1"><video src="static/videos/mc_furnace.mp4" autoplay muted loop playsinline preload="metadata"></video><figcaption><span class="tier">Smelting</span>Craft a furnace</figcaption></figure>
+      <figure class="vcard reveal d2"><video src="static/videos/mc_smoker.mp4" autoplay muted loop playsinline preload="metadata"></video><figcaption><span class="tier">Smelting</span>Craft a smoker</figcaption></figure>
+      <figure class="vcard reveal d1"><video src="static/videos/mc_torch.mp4" autoplay muted loop playsinline preload="metadata"></video><figcaption><span class="tier">Utility</span>Craft torches</figcaption></figure>
+      <figure class="vcard reveal d2"><video src="static/videos/mc_wooden_pickaxe2.mp4" autoplay muted loop playsinline preload="metadata"></video><figcaption><span class="tier">Wooden</span>Craft a wooden pickaxe (take 2)</figcaption></figure>
+    </div>
+    <p class="note-inline reveal" style="margin-top:16px">Clips sped up for viewing. Full success-rate breakdown across five crafting tiers is in the <a href="#results">results</a> above.</p>
+    <a class="repo-cta reveal" href="https://github.com/AayushSalvi/StructAgent-Minecraft" target="_blank" rel="noopener">
+      Explore the StructAgent-Minecraft repo <span class="arrow">→</span></a>
+  </div>
+</section>
+
+<!-- ── Trajectories ────────────────────────────────── -->
+<section id="trajectories">
+  <div class="container">
+    <div class="eyebrow">Solid, not cherry-picked</div>
+    <h2 class="sec-title reveal">Explore every run</h2>
+    <p class="lead reveal">Both backbones were run over all 360 OSWorld-Verified tasks — <b>every solved run replays here,
+      step by step</b>. Per-step screenshots, verifier events, the plan, and the full debug trace are released.
+      Search and filter the complete index below (click any ✓ run to replay it); the full-resolution viewers are on Hugging Face.</p>
+    <div class="tstat reveal" id="traj-stat"></div>
+
+    <h3 class="subhead reveal">Featured runs — click to step through</h3>
+    <div class="grid" id="traj-featured"></div>
+
+    <h3 class="subhead sh2 reveal">Browse the full index <span style="font-weight:600;color:var(--muted);font-size:.85rem">— click any ✓ solved run to replay</span></h3>
+    <div class="tbar reveal">
+      <input class="tsearch" id="traj-search" type="text" placeholder="Search task instructions…">
+    </div>
+    <div class="chips reveal" id="traj-bb"></div>
+    <div class="chips reveal" id="traj-dom"></div>
+    <div class="tlist" id="traj-list"></div>
+    <button class="tmore" id="traj-more" hidden></button>
+    <a class="repo-cta reveal" href="https://huggingface.co/datasets/WenyiWU0111/structagent-page-assets/tree/main/traj" target="_blank" rel="noopener" style="margin-top:22px">
+      Browse &amp; download all trajectories on Hugging Face <span class="arrow">→</span></a>
+  </div>
+</section>
+
+<!-- ── Trajectory player modal ─────────────────────── -->
+<div class="tplayer" id="tplayer" hidden>
+  <div class="tplayer-backdrop" id="tp-backdrop"></div>
+  <div class="tplayer-card" role="dialog" aria-modal="true">
+    <button class="tplayer-close" id="tp-close" aria-label="close">×</button>
+    <div class="tplayer-head">
+      <div class="tp-pills"><span class="bb" id="tp-bb"></span><span class="dpill" id="tp-dom"></span><span class="ok" id="tp-ok">✓ solved</span></div>
+      <p class="tp-instr" id="tp-instr"></p>
+    </div>
+    <div class="tplayer-stage">
+      <img id="tp-img" alt="trajectory step">
+      <button class="carousel-nav carousel-prev" id="tp-prev" aria-label="previous step">‹</button>
+      <button class="carousel-nav carousel-next" id="tp-next" aria-label="next step">›</button>
+    </div>
+    <div class="tplayer-cap"><span class="tp-step" id="tp-step"></span><span id="tp-cap"></span></div>
+    <div class="tplayer-bar">
+      <button class="tp-play" id="tp-play">▶ Play</button>
+      <div class="tp-prog" id="tp-prog"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ── Full demo video ─────────────────────────────── -->
+<section id="walkthrough">
+  <div class="container">
+    <div class="eyebrow">Vision</div>
+    <h2 class="sec-title reveal">Full demo</h2>
+    <p class="lead reveal">A walkthrough of Aether AI's overall architecture and vision, with an overview of our current projects.</p>
+    <figure class="hero-teaser reveal" style="max-width:900px">
+      <div class="frame">
+        <video class="hero-video" src="https://huggingface.co/datasets/WenyiWU0111/structagent-page-assets/resolve/main/aether_demo.mp4" poster="static/images/hero_poster.png"
+               controls playsinline preload="metadata"></video>
+      </div>
+    </figure>
+  </div>
+</section>
+
+<!-- ── Citation ────────────────────────────────────── -->
+<section id="cite" class="alt">
+  <div class="container">
+    <div class="eyebrow">Citation</div>
+    <h2 class="sec-title">Cite</h2>
+    <div class="cite-block">@article{wu2026structagent,
+  title   = {StructAgent: Building Digital Agents with Unified Causal Structure},
+  author  = {Wu, Wenyi and Zhu, Sibo and Zhou, Kun and Salvi, Aayush and Song, Zixuan and Huang, Biwei},
+  journal = {arXiv preprint arXiv:XXXX.XXXXX},
+  year    = {2026}
+}</div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    StructAgent · built on <a href="https://github.com/xlang-ai/OSWorld" target="_blank" rel="noopener">OSWorld</a>,
+    <a href="https://osu-nlp-group.github.io/Mind2Web/" target="_blank" rel="noopener">Mind2Web</a>, and MineRL.
+    Page inspired by OSWorld-2.0 and NVIDIA GEAR ASPIRE.
+  </div>
+</footer>
+
+<script src="static/js/main.js"></script>
+</body>
+</html>
