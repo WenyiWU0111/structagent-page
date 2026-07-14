@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>StructAgent: Building Digital Agents with Unified Causal Structure</title>
+<title>StructAgent: Harness Long-horizon Digital Agents with Unified Causal Structure</title>
 <meta name="description" content="StructAgent commits progress only when a verifier attaches evidence to a task-state update — not when the model says it's done. New open-model SOTA on OSWorld, with generalization to Mind2Web and Minecraft.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,7 +27,7 @@
       <a href="#trajectories">Trajectories</a>
       <a href="#walkthrough">Video</a>
       <a href="#cite">Cite</a>
-      <a class="ext" href="StructAgent_paper.pdf" target="_blank" rel="noopener">Paper</a>
+      <a class="ext" href="https://arxiv.org/abs/2607.11388" target="_blank" rel="noopener">Paper</a>
       <a class="ext" href="https://github.com/WenyiWU0111/StructAgent" target="_blank" rel="noopener">Code</a>
     </div>
   </div>
@@ -36,8 +36,8 @@
 <!-- ── Hero ────────────────────────────────────────── -->
 <header class="hero">
   <div class="container">
-    <p class="venue">Preprint · 2026</p>
-    <h1 class="paper-title">StructAgent: Building Digital Agents with Unified Causal Structure</h1>
+    <p class="venue">arXiv:2607.11388 · 2026</p>
+    <h1 class="paper-title">StructAgent: Harness Long-horizon Digital Agents with Unified Causal Structure</h1>
     <p class="hero-punch">Progress you can verify — not just claim.</p>
 
     <div class="author-row">
@@ -47,7 +47,7 @@
     <div class="affil-row"><sup>1</sup> UC San Diego &nbsp;&nbsp; <sup>2</sup> Aether AI Lab</div>
 
     <div class="cta cta-center">
-      <a class="btn btn-solid" href="StructAgent_paper.pdf" target="_blank" rel="noopener">
+      <a class="btn btn-solid" href="https://arxiv.org/abs/2607.11388" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3v4a1 1 0 0 0 1 1h4"/><path d="M17 21H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7l5 5v11a2 2 0 0 1-2 2z"/></svg>Paper</a>
       <a class="btn btn-ghost" href="https://github.com/WenyiWU0111/StructAgent" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>Code</a>
@@ -66,17 +66,25 @@
     <div class="eyebrow">Abstract</div>
     <h2 class="sec-title">A verifier-centered agent over a unified causal State</h2>
     <p class="lead">
-      Long-horizon computer-use agents remain brittle because they must not only act over many
-      steps but also keep a reliable account of <em>what is currently true</em> — earlier progress
-      can be overwritten, invalidated, or falsely claimed complete. <b>StructAgent</b> is a
-      verifier-centered planner–actor framework built around a unified, causal <b>task State</b>
-      that records satisfied requirements, captured facts, and their supporting evidence. The
-      planner selects subgoals and the actor executes them, but only <b>verifier-backed events</b>
-      can advance or invalidate the State — so verification commits progress <em>during</em>
-      execution, not just as a terminal judge. Structured memory and typed tool surfaces supply
-      State-conditioned advice and reliable execution paths, and failure attribution routes
-      recovery without bypassing evidence-backed updates — giving the planner a compact, auditable
-      view of progress instead of raw histories or unsupported DONE claims.
+      Recent advances in large language models (LLMs) and vision-language models (VLMs) have
+      enabled increasingly capable digital agents for computer use. However, real-world tasks are
+      often long-horizon and involve evolving contexts containing accumulated observations,
+      intermediate edits, failed attempts, and partially completed executions. Existing agents
+      typically operate over raw interaction history, making task progress difficult to interpret,
+      verify, and recover, which ultimately limits reliable long-horizon execution. In this paper,
+      we argue that addressing this challenge requires explicitly structuring both the agent's
+      state and workflow around a unified causal representation of task progress. We present
+      <b>StructAgent</b>, a state-centered framework that introduces a <b>unified state</b> for
+      maintaining compact, verifiable task progress and a <b>structured workflow</b> that regulates
+      progress through <b>verifier-backed state transitions</b>. Building on this design, StructAgent
+      further enables explicit progress checkpointing, evidence-driven task completion, targeted
+      failure recovery, and tool-supported execution, while ensuring that all progress updates
+      remain grounded in verification. Extensive experiments demonstrate that StructAgent
+      consistently improves a wide range of LLM and VLM backbones on long-horizon computer-use
+      tasks. On OSWorld-Verified, it improves Qwen3.5-9B from 27.0% to 46.9% success rate and
+      Qwen3.5-27B from 31.6% to 62.2%, while achieving a new open-source state of the art of
+      <b>78.9%</b> with MiniMax-M3. Moreover, the same framework generalizes beyond desktop
+      environments to Minecraft, demonstrating the generality of our design.
     </p>
   </div>
 </section>
@@ -246,9 +254,9 @@
     <div class="eyebrow">Citation</div>
     <h2 class="sec-title">Cite</h2>
     <div class="cite-block">@article{wu2026structagent,
-  title   = {StructAgent: Building Digital Agents with Unified Causal Structure},
+  title   = {StructAgent: Harness Long-horizon Digital Agents with Unified Causal Structure},
   author  = {Wu, Wenyi and Zhu, Sibo and Zhou, Kun and Salvi, Aayush and Song, Zixuan and Huang, Biwei},
-  journal = {arXiv preprint arXiv:XXXX.XXXXX},
+  journal = {arXiv preprint arXiv:2607.11388},
   year    = {2026}
 }</div>
   </div>
